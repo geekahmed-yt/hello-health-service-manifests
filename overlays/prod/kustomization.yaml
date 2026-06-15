@@ -16,5 +16,10 @@ patches:
     target:
       kind: Deployment
 
+images:
+  - name: hello-health-service
+    newName: geekahmed/hello-health-service
+    newTag: main-0b5d366
+
 commonLabels:
   environment: prod
