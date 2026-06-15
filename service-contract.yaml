@@ -23,3 +23,6 @@ spec:
       engine: redis
       version: "7"
       purpose: session-and-rate-limiting
+    policy:
+      engine: opa
+      mode: sidecar
