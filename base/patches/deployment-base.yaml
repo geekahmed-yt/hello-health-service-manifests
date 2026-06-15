@@ -6,10 +6,23 @@ spec:
   template:
     spec:
       containers:
+        - $patch: replace
         - name: hello-health-service
           image: hello-health-service:latest
           ports:
             - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
           env:
             - name: SERVICE_NAME
               value: hello-health-service

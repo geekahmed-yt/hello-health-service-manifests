@@ -8,10 +8,12 @@ bases:
 
 components:
   - github.com/geekahmed-yt/hello-platform-global-config/components/replicas
-  - github.com/geekahmed-yt/hello-platform-global-config/components/resource-limits
 
 patches:
   - path: patches/deployment-patch.yaml
+    target:
+      kind: Deployment
+  - path: patches/resource-limits-patch.yaml
     target:
       kind: Deployment
 
