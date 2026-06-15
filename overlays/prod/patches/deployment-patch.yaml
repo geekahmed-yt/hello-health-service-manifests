@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-health-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: hello-health-service
+          image: hello-health-service:v1.0.0
+          env:
+            - name: LOG_LEVEL
+              value: "warn"
+            - name: ENVIRONMENT
+              value: "prod"
+            - name: CACHE_ENABLED
+              value: "true"
+            - name: DATABASE_HOST
+              value: "postgres.prod.svc.cluster.local"
+            - name: ENABLE_METRICS
+              value: "true"

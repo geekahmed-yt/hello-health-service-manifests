@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-health-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: hello-health-service
+          image: hello-health-service:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SERVICE_NAME
+              value: hello-health-service

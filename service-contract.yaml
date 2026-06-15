@@ -1,0 +1,25 @@
+apiVersion: hello.io/v1alpha1
+kind: ServiceContract
+metadata:
+  name: hello-health-service
+spec:
+  service:
+    name: hello-health-service
+    port: 8080
+    protocol: http
+    containerName: hello-health-service
+
+  # Declare infrastructure dependencies.
+  # The Argo CD CMP (hello-infra-resolver) reads this block,
+  # maps each key + engine to a platform component, and injects
+  # the resolved configuration automatically.
+  infra:
+    database:
+      engine: postgres
+      version: "16"
+      name: health_db
+      schema: public
+    cache:
+      engine: redis
+      version: "7"
+      purpose: session-and-rate-limiting

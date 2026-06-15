@@ -1,0 +1,17 @@
+# Build outputs
+*.out
+*.gen.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local testing
+kustomize-build/

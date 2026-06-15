@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-health-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: hello-health-service
+          image: hello-health-service:dev
+          env:
+            - name: LOG_LEVEL
+              value: "debug"
+            - name: ENVIRONMENT
+              value: "dev"
+            - name: CACHE_ENABLED
+              value: "false"

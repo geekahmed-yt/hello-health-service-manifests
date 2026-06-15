@@ -1,0 +1,7 @@
+# Service-specific default values for hello-health-service
+# These are used by the base kustomization
+
+serviceName: hello-health-service
+appName: hello-health-service
+containerPort: 8080
+servicePort: 80
