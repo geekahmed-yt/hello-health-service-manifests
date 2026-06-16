@@ -12,6 +12,6 @@ patches:
 images:
 - name: hello-health-service
   newName: geekahmed/hello-health-service
-  newTag: main-87800b5
+  newTag: main-9d1ef4d
 commonLabels:
   environment: dev
